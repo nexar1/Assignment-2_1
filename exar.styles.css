@@ -1,0 +1,461 @@
+/* YOUR NAME GOES HERE */
+
+/* --------------- ADD CSS RESET TO THE FILE HERE --------------- */
+
+meyerweb.com
+Main content
+Navigation links
+Footer
+Post Archives
+CSS Work
+Toolbox
+Writing
+Speaking
+Other Stuff
+About this site
+CSS Tools: Reset CSS
+The goal of a reset stylesheet is to reduce browser inconsistencies in things like default line heights, margins and font sizes of headings, and so on. The general reasoning behind this was discussed in a May 2007 post, if you're interested. Reset styles quite often appear in CSS frameworks, and the original "meyerweb reset" found its way into Blueprint, among others.
+
+The reset styles given here are intentionally very generic. There isn't any default color or background set for the body element, for example. I don't particularly recommend that you just use this in its unaltered state in your own projects. It should be tweaked, edited, extended, and otherwise tuned to match your specific reset baseline. Fill in your preferred colors for the page, links, and so on.
+
+In other words, this is a starting point, not a self-contained black box of no-touchiness.
+
+If you want to use my reset styles, then feel free! It's all explicitly in the public domain (I have to formally say that or else people ask me about licensing). You can grab a copy of the file to use and tweak as fits you best. If you're more of the copy-and-paste type, or just want an in-page preview of what you'll be getting, here it is.
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+Previous Versions
+v1.0 (200802)
+Acknowledgments
+Thanks to Paul Chaplin for the blockquote / q rules.
+
+Identity Archipelago
+Mastodon
+GitHub
+Codepen
+Dribbble
+Flickr
+LinkedIn
+The excuse of the day isInternet Explorer
+All contents of this site, unless otherwise noted, are ©1993-2024 Eric A. and Kathryn S. Meyer. All Rights Reserved.
+"Thoughts From Eric" is powered by WordPress. Most of the rest of the site is hand-authored.
+The ink-sketch images used in this site’s design are adapted from Yūzan Mori’s Hamonshū, Volumes 1-3, published in 1903 and made available for public use by the Smithsonian Libraries and the Internet Archive.
+
+/* ----- AUTOPREFIXER FOR VS CODE WAS USED FOR VENDOR PREFIXES ----- */
+/* ---------- VARIABLES ---------- */
+:root{
+    --red: #760029;
+    --pink: #9a0093;
+    --orange: #ff8f6c;
+    --yellow: #FCD30D;
+    --green: #0BD996;
+    --lime-green: #AED90B;
+    --blue-gray: #90b8f7;
+    --blue: #1EB8FC;
+    --black: #000;
+    --white: #fff;
+    --light-gray: #eaeaea;
+    --dark-gray: #222;
+}
+
+/* ---------- GLOBAL STYLES ---------- */
+*{
+    box-sizing: border-box;
+    line-height: 1.35;
+}
+
+
+
+/* ----- CHECK FOR USER DARK MODE PREFERENCE ----- */
+/* --------------- BEGIN USER PREFERS DARK COLOR SCHEME QUERY --------------- */
+
+/* CHANGE THE BODY'S BACKGROUND COLOR TO THE DARK GRAY IF THE USER PREFERS DARK MODE */
+
+@media (prefers-color-scheme: dark){
+    body {
+        background-color: (--dark-gray);
+    }
+}
+
+/* --------------- END USER PREFERS DARK COLOR SCHEME QUERY --------------- */
+
+
+
+/* ----- HEADINGS ----- */
+h1, h2, h3, h4{
+    font-weight: bold;
+}
+
+h1{
+    font-size: 2em;
+    margin: 0.5em 0;
+    display: inline;
+}
+
+h2{
+    font-size: 1.75em;
+    display: inline;
+}
+
+/* ----- IMAGES ----- */
+img{
+    display: block;
+    max-width: 100%;
+    margin: 0.5em 0;
+}
+
+/* ----- ANIMATED ICON ----- */
+/* Icon and animation code from https://typogram.github.io/Anicons/ */
+.icon{
+    font-family: "Anicons Regular";
+    font-size: 2em;
+    display: inline-block;
+    margin: 0 0.5em;
+    -webkit-animation: icon-animation 1s ease-in-out infinite;
+            animation: icon-animation 1s ease-in-out infinite;
+    overflow: visible;
+}
+
+footer .icon{
+    font-size: 1em;
+}
+
+@-webkit-keyframes icon-animation {
+    0% { font-variation-settings: "TIME" 1; }
+  100% { font-variation-settings: "TIME" 100; }
+}
+
+@keyframes icon-animation {
+    0% { font-variation-settings: "TIME" 1; }
+  100% { font-variation-settings: "TIME" 100; }
+}
+
+
+
+/* ----- HANDLE PREFERS REDUCED MOTION FOR THE ICON ANIMATIONS ----- */
+/* --------------- BEGIN USER PREFERS REDUCED MOTION QUERY --------------- */
+    @-webkit-keyframes icon-animation {
+        0% { font-variation-settings: "TIME" 1; }
+    }
+    @keyframes icon-animation {
+        0% { font-variation-settings: "TIME" 1; }
+    }
+/* --------------- END USER PREFERS REDUCED MOTION QUERY --------------- */
+
+
+
+/* ----- TEXT ----- */
+p, small{
+    font-size: 1em;
+    margin: 0.25em;
+    padding: 0.25em;
+    max-width: 75ch;
+}
+
+/* ----- MAIN/HEADER/FOOTER ----- */
+main, header, footer{
+    font-family: sans-serif;
+    color: var(--dark-gray);
+    width: 100%;
+}
+
+header, footer{
+    padding: 1em;
+}
+
+main{
+    max-width: 1795px;
+}
+
+/* ----- CONTAINERS ----- */
+section{
+    margin: 1em 0;
+    padding: 1em;
+}
+
+/* ---------- EXTRA SMALL SCREEN STYLES ---------- */
+
+@media only screen and (max width 600px);
+{
+
+header, footer{
+    background-color: var(--pink);
+    color: var(--white);
+}
+
+section{
+    background-color: var(--red);
+    color: var(--light-gray);
+}
+
+img{
+    margin: 0.75em 0.75em 0.75em 0;
+    display: inline;
+    float: left;
+}
+}
+
+@media only screen and (min width 600px);
+{
+    header, footer{
+        background-color: var(--lime-green);
+        color: var(--dark-gray);
+    }
+
+
+    main{
+        display: grid;
+        grid-gap: 0.75em;
+        grid-template-columns: 1fr 1fr;
+        margin: 1em 0;
+    }
+
+    section{
+        background-color: var(--yellow);
+        color: var(--dark-gray);
+        margin: 0;
+    }
+
+    #one, #two, #seven, #eight{
+        grid-column: 1/3;
+    }
+
+    img{
+        width: 200px;
+        max-width: 200px;
+    } */
+}
+/* --------------- END SMALL SCREEN SIZES --------------- */
+
+@media only screen and (min width 768px);
+{
+    header, footer{
+        background-color: var(--black);
+        color: var(--white);
+    }   
+
+    main{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    section{
+        background-color: var(--light-gray);
+    }
+
+    #one{
+        grid-column: 1/3;
+    }
+
+    #two{
+        grid-column: 3/4;
+        grid-row: 1/3;
+    }
+
+    #seven{
+        grid-column: 3/4;
+        grid-row: 3/5;
+    } 
+}
+/* --------------- END MEDIUM SCREEN SIZES --------------- */
+
+
+
+/* ---------- LARGE SCREEN STYLES ---------- */
+/* --------------- BEGIN LARGE SCREEN SIZES --------------- */
+
+@media only screen and (min-width: 992px);
+{
+    header, footer{
+        background-color: var(--lime-green);
+        color: var(--dark-gray);
+    }
+
+    h1, h2{
+        display: inline-block;
+    }
+
+    section{
+        background-color: var(--blue);
+    }
+
+    main{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    #one, #seven{
+        grid-column: 1/3;
+    }
+
+    #two{
+        grid-row: 1/2;
+    }
+
+    #two, #eight{
+        grid-column: 3/5;
+    }
+
+    #seven, #eight{
+        grid-row: 3/4;
+    }
+}
+/* --------------- END LARGE SCREEN SIZES --------------- */
+
+
+
+/* ---------- ADJUSTING RESPONSIVE IMAGE SIZE ---------- */
+/* --------------- BEGIN RESPONSIVE IMAGE ADJUST SIZES --------------- */
+   
+
+
+
+@media only screen and (max-width 620px);
+{   
+img {
+        width: 300px;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width 1380px) and (min-width 620px);
+{
+img {
+        width: 300px;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (min-width:1380px);
+{
+img {
+    width: 300px;
+    max-width: 300px;
+}
+}
+
+
+
+/* --------------- END RESPONSIVE IMAGE ADJUST SIZES --------------- */
+
+
+
+/* ---------- EXTRA LARGE SCREEN STYLES ---------- */
+/* --------------- BEGIN EXTRA LARGE SCREEN SIZES --------------- */
+
+@media only screen and (min-width:1200px);
+ {
+
+
+    header, footer{
+        background-color: var(--orange);
+        padding-left: 5%;
+    }
+
+    main{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin: 1em auto;
+    }
+
+    section{
+        background-color: var(--blue-gray);
+        color: var(--dark-gray);
+    }
+
+    #one, #two{
+        grid-row: 1/3;
+    }
+
+    #one{
+        grid-column: 1/5;
+    }
+
+    #two{
+        grid-column: 5/9;
+    }
+
+    #three, #four{
+        grid-column: 9/12;
+    }
+
+    #three{
+        grid-row: 1/2;
+    }
+
+    #four{
+        grid-row: 2/3;
+    }
+
+    #five, #six{
+        grid-column: 1/4;
+    }
+
+    #five{
+        grid-row: 3/4;
+    }
+
+    #six{
+        grid-row: 4/5;
+    }
+
+    #seven, #eight{
+        grid-row: 3/5;
+    }
+
+    #seven{
+        grid-column: 4/8;
+    }
+
+    #eight{
+        grid-column: 8/12;
+    }
+
+    #three p, #four p, #five p, #six p{
+        padding-top: 2em;
+    }
+}
+/* --------------- END EXTRA LARGE SCREEN SIZES --------------- */
